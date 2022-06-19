@@ -39,8 +39,10 @@ export default function App() {
   if (isLoading) {
     return (
       <div>
-        <h2> <CircularProgress color="inherit"/> loading...</h2>
-        
+        <h2>
+          {" "}
+          <CircularProgress color="inherit" /> loading...
+        </h2>
       </div>
     );
   }
@@ -57,33 +59,41 @@ export default function App() {
     <>
       <CssBaseline />
       <Box>
-        <Typography sx={{ fontWeight: 1000 }} align="center" variant="h4">
-          Random Dog
-        </Typography>
-        <Paper elevation={24} sx={{ width: "500px", margin: "auto" }}>
-          <Box sx={{ padding: "auto" }}>
-            {" "}
-            <img
-              style={{ width: "500px", height: "400px", objectFit: "cover" }}
-              src={imageUrl}
-              alt="Random dog"
-            />
+        <Box sx={{ overflow: "auto" }}>
+          <Box>
+            <Typography sx={{ fontWeight: 1000 }} align="center" variant="h4">
+              Random Dog
+            </Typography>
+            <Paper elevation={24} sx={{ width: "500px", margin: "auto" }}>
+              <Box sx={{ padding: "auto" }}>
+                {" "}
+                <img
+                  style={{
+                    width: "500px",
+                    height: "400px",
+                    objectFit: "cover",
+                  }}
+                  src={imageUrl}
+                  alt="Random dog"
+                />
+              </Box>
+              <Box sx={{ textAlign: "center", padding: "20px" }}>
+                <Button
+                  sx={{
+                    width: "200px",
+                    color: "white",
+                    borderRadius: "25px",
+                    background:
+                      "linear-gradient(90deg, rgba(9,9,121,1) 17%, rgba(0,212,255,1) 100%)",
+                  }}
+                  onClick={randomDog}
+                >
+                  Random
+                </Button>
+              </Box>
+            </Paper>
           </Box>
-          <Box sx={{ textAlign: "center", padding: "20px" }}>
-            <Button
-              sx={{
-                width: '200px',
-                color: 'white',
-                borderRadius: "25px",
-                background:
-                  "linear-gradient(90deg, rgba(9,9,121,1) 17%, rgba(0,212,255,1) 100%)",
-              }}
-              onClick={randomDog}
-            >
-              Random
-            </Button>
-          </Box>
-        </Paper>
+        </Box>
       </Box>
     </>
   );
