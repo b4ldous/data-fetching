@@ -39,10 +39,13 @@ export default function App() {
   if (isLoading) {
     return (
       <div>
-        <h2>
-          {" "}
-          <CircularProgress color="inherit" /> loading...
-        </h2>
+         <Paper elevation={24} sx={{ width: "500px", height: "400px", margin: "auto" }}>
+         <CircularProgress color="inherit" /> loading... 
+            </Paper>
+        
+          
+          
+        
       </div>
     );
   }
